@@ -1,0 +1,9 @@
+{
+  "checkpoint": "trans_clean",
+  "max_attr_chars": 500,
+  "max_length": 384,
+  "swap_tta": true,
+  "batch": 384,
+  "public_score": "0.538866231217313",
+  "note": "лучший результат"
+}

@@ -1,0 +1,8 @@
+{
+  "checkpoint": "continued",
+  "max_attr_chars": 500,
+  "max_length": 384,
+  "swap_tta": true,
+  "batch": 384,
+  "public_score": "0.5384910961"
+}
