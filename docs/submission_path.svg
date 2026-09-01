@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="pathmap" viewBox="0 0 1300 3380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Генеалогия сабмитов сверху вниз: от структурного бустинга 0.2924 через кросс-энкодер BAAI/bge-reranker-v2-m3, дообученный на 365 тысячах пар ручной разметки, его ансамбли с ruBert-base и второй BGE на 4.9 миллионах LLM-размеченных пар, к модели ce_bge_trans_clean на транзитивных парах и двум финальным решениям 0.538866 и 0.538491, с боковыми ветвями измеренных и отвергнутых гипотез слева и справа от главного ствола и отдельной, не сросшейся с основной линией, лексической веткой сверху">
+            <rect x="0" y="0" width="1300" height="3380" fill="#f3f5f1"/>
+            <defs>
+              <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L8,4 L0,8 z" fill="currentColor"/>
+              </marker>
+            </defs>
+
+            <!-- ================= dead lexical branch (top-left column) ================= -->
+<g font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">
+  <text x="30" y="45" fill="#5c6960" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="600" letter-spacing="0.03em" font-size="12">ДОРОЖКА А · ЛЕКСИКА И ПРАВИЛА</text>
+  <text x="30" y="61" fill="#5c6960" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="600" letter-spacing="0.03em" font-size="12">ОСТАВЛЕНА, В СТВОЛ НЕ ВОШЛА</text>
+
+  <rect x="130" y="80" width="260" height="90" rx="6" fill="#eaede6" stroke="#d3d9ce"/>
+  <text x="260" y="106" text-anchor="middle" fill="#1e2420" font-weight="600" font-size="13">точные правила</text>
+  <text x="260" y="124" text-anchor="middle" fill="#5c6960" font-size="10.5">совпадение артикул/бренд/цвет</text>
+  <text x="260" y="138" text-anchor="middle" fill="#5c6960" font-size="10.5">(matching-rules-submit)</text>
+  <text x="260" y="158" text-anchor="middle" fill="#1e2420" font-weight="700" font-size="15">до 0.240</text>
+
+  <line x1="260" y1="170" x2="260" y2="205" stroke="#5c6960" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="130" y="205" width="260" height="98" rx="6" fill="#eaede6" stroke="#d3d9ce"/>
+  <text x="260" y="231" text-anchor="middle" fill="#1e2420" font-weight="600" font-size="13">лексика + гибриды</text>
+  <text x="260" y="248" text-anchor="middle" fill="#5c6960" font-size="10.5">TF-IDF-бустинг, mmarco-энкодер,</text>
+  <text x="260" y="261" text-anchor="middle" fill="#5c6960" font-size="10.5">гибрид лексики с CE</text>
+  <text x="260" y="288" text-anchor="middle" fill="#1e2420" font-weight="700" font-size="15">до 0.320</text>
+
+  <line x1="260" y1="303" x2="260" y2="338" stroke="#a54a2e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="260" y="362" text-anchor="middle" fill="#a54a2e" font-weight="700" font-size="18">✕</text>
+  <text x="260" y="384" text-anchor="middle" fill="#a54a2e" font-size="10.5">потолок 0.32,</text>
+  <text x="260" y="397" text-anchor="middle" fill="#a54a2e" font-size="10.5">дальше не пошла</text>
+</g>
+
+            <!-- ================= main spine, centerline x=650 ================= -->
+            <line x1="650" y1="70" x2="650" y2="3340" stroke="#d3d9ce" stroke-width="1"/>
+
+            <rect x="490" y="75" width="320" height="130" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.4"/>
+<text x="650" y="103" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#1e2420">gbdt_v1.1</text>
+<text x="650" y="123" text-anchor="middle" font-size="11" fill="#5c6960">структурный бустинг,</text>
+<text x="650" y="139" text-anchor="middle" font-size="11" fill="#5c6960">34 признака пары</text>
+<text x="650" y="185" text-anchor="middle" font-size="21" font-weight="700" fill="#1e2420">0.2924</text>
+
+<line x1="650" y1="205" x2="650" y2="325" stroke="#0e6e55" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="666" y="265" fill="#0e6e55" font-size="11" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">+29M RU-энкодер</text>
+
+<rect x="490" y="325" width="320" height="130" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.4"/>
+<text x="650" y="353" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#1e2420">blend_v2</text>
+<text x="650" y="373" text-anchor="middle" font-size="11" fill="#5c6960">+ компактный RU-трансформер,</text>
+<text x="650" y="389" text-anchor="middle" font-size="11" fill="#5c6960">29M, претрейн на 1M LLM-пар</text>
+<text x="650" y="435" text-anchor="middle" font-size="21" font-weight="700" fill="#1e2420">0.3102</text>
+
+<line x1="650" y1="455" x2="650" y2="575" stroke="#0e6e55" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="666" y="515" fill="#0e6e55" font-size="11" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">→ BGE-reranker-v2-m3</text>
+
+<rect x="490" y="575" width="320" height="130" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.4"/>
+<text x="650" y="603" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#1e2420">v16a · bge_v5s</text>
+<text x="650" y="623" text-anchor="middle" font-size="11" fill="#5c6960">BAAI/bge-reranker-v2-m3, 568M</text>
+<text x="650" y="639" text-anchor="middle" font-size="11" fill="#5c6960">целиком на 365K ручных пар</text>
+<text x="650" y="685" text-anchor="middle" font-size="21" font-weight="700" fill="#1e2420">0.4357</text>
+
+<line x1="650" y1="705" x2="650" y2="825" stroke="#0e6e55" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="666" y="765" fill="#0e6e55" font-size="11" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">+GBDT 90/10</text>
+
+<rect x="490" y="825" width="320" height="130" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.4"/>
+<text x="650" y="853" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#1e2420">v16b · bgeblend_v6s</text>
+<text x="650" y="873" text-anchor="middle" font-size="11" fill="#5c6960">v16a + структурное вето:</text>
+<text x="650" y="889" text-anchor="middle" font-size="11" fill="#5c6960">тот же gbdt_v1.1, ранги 90/10</text>
+<text x="650" y="935" text-anchor="middle" font-size="21" font-weight="700" fill="#1e2420">0.4370</text>
+
+<line x1="650" y1="955" x2="650" y2="1075" stroke="#0e6e55" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="666" y="1015" fill="#0e6e55" font-size="11" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">+ruBert-base</text>
+
+<rect x="490" y="1075" width="320" height="130" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.4"/>
+<text x="650" y="1103" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#1e2420">v16c · ens3_v7s</text>
+<text x="650" y="1123" text-anchor="middle" font-size="11" fill="#5c6960">BGE 0.7 + ruBert-base 0.2</text>
+<text x="650" y="1139" text-anchor="middle" font-size="11" fill="#5c6960">+ gbdt_v1.1 0.1</text>
+<text x="650" y="1185" text-anchor="middle" font-size="21" font-weight="700" fill="#1e2420">0.4389</text>
+
+<line x1="650" y1="1205" x2="650" y2="1325" stroke="#0e6e55" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="666" y="1265" fill="#0e6e55" font-size="11" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">+2-я BGE, вес 0.4</text>
+
+<rect x="490" y="1325" width="320" height="140" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.4"/>
+<text x="650" y="1353" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#1e2420">v124 · ens4_v18s</text>
+<text x="650" y="1373" text-anchor="middle" font-size="11" fill="#5c6960">BGE-human 0.4 + BGE-retrieval 0.4</text>
+<text x="650" y="1388" text-anchor="middle" font-size="11" fill="#5c6960">(та же BGE, претрейн 4.9M LLM-пар)</text>
+<text x="650" y="1403" text-anchor="middle" font-size="11" fill="#5c6960">+ ruBert 0.1 + GBDT 0.1</text>
+<text x="650" y="1445" text-anchor="middle" font-size="21" font-weight="700" fill="#1e2420">0.4818</text>
+
+<g font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">
+  <line x1="490" y1="1395" x2="380" y2="1395" stroke="#5c6960" stroke-dasharray="3,3" stroke-width="1.2"/>
+  <polygon points="260,1340 335,1395 260,1450 185,1395" fill="#eaede6" stroke="#5c6960" stroke-dasharray="3,3"/>
+  <text x="260" y="1380" text-anchor="middle" fill="#1e2420" font-weight="600" font-size="11">v25 · зонд</text>
+  <text x="260" y="1394" text-anchor="middle" fill="#5c6960" font-size="9.5">predict=0.5</text>
+  <text x="260" y="1415" text-anchor="middle" fill="#1e2420" font-weight="700" font-size="15">11.13%</text>
+  <text x="260" y="1431" text-anchor="middle" fill="#5c6960" font-size="9">доля позитивов в тесте</text>
+</g>
+
+<line x1="810" y1="1395" x2="890" y2="1395" stroke="#5c6960" stroke-width="1.4"/>
+
+<text x="820" y="1388" fill="#5c6960" font-size="10" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">ось: вес BGE-retrieval</text>
+
+<line x1="890" y1="1240" x2="890" y2="1550" stroke="#5c6960" stroke-width="1.2"/>
+
+<g stroke="#5c6960"><line x1="890" y1="1285" x2="920" y2="1285" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="920" y="1240" width="240" height="90" rx="6" fill="#eaede6" stroke="#d3d9ce"/>
+<text x="1040" y="1265" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">r60</text>
+<text x="1040" y="1282" text-anchor="middle" font-size="10.5" fill="#5c6960">вес retrieval-BGE 0.6</text>
+<text x="1040" y="1316" text-anchor="middle" font-size="17" font-weight="700" fill="#1e2420">0.4940</text>
+
+<g stroke="#5c6960"><line x1="890" y1="1395" x2="920" y2="1395" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="920" y="1350" width="240" height="90" rx="6" fill="#eaede6" stroke="#d3d9ce"/>
+<text x="1040" y="1375" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">r70</text>
+<text x="1040" y="1392" text-anchor="middle" font-size="10.5" fill="#5c6960">вес retrieval-BGE 0.7</text>
+<text x="1040" y="1426" text-anchor="middle" font-size="17" font-weight="700" fill="#1e2420">0.4981</text>
+
+<g stroke="#5c6960"><line x1="890" y1="1505" x2="920" y2="1505" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="920" y="1460" width="240" height="90" rx="6" fill="#eaede6" stroke="#d3d9ce"/>
+<text x="1040" y="1485" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">pf_v19solo</text>
+<text x="1040" y="1502" text-anchor="middle" font-size="10.5" fill="#5c6960">retrieval-BGE 0.9 + GBDT 0.1,</text>
+<text x="1040" y="1515" text-anchor="middle" font-size="10.5" fill="#5c6960">BGE-human и ruBert удалены</text>
+<text x="1040" y="1536" text-anchor="middle" font-size="17" font-weight="700" fill="#1e2420">0.5013</text>
+
+<text x="920" y="1580" fill="#a54a2e" font-size="10.5" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">ранг. корр. с остальными 0.907 (у прочих пар 0.92-0.94) —</text>
+
+<text x="920" y="1594" fill="#a54a2e" font-size="10.5" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">потолок 0.501, ветка не развивалась дальше</text>
+
+<line x1="650" y1="1465" x2="650" y2="1750" stroke="#0e6e55" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="666" y="1608" fill="#0e6e55" font-size="11" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">ансамбль → 1 модель</text>
+
+<rect x="490" y="1750" width="320" height="140" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.4"/>
+<text x="650" y="1778" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#1e2420">v28 · trans_v22</text>
+<text x="650" y="1798" text-anchor="middle" font-size="11" fill="#5c6960">ce_bge_trans_clean, вес 1.0</text>
+<text x="650" y="1813" text-anchor="middle" font-size="11" fill="#5c6960">(та же BGE-архитектура,</text>
+<text x="650" y="1828" text-anchor="middle" font-size="11" fill="#5c6960">обучена на транзитивных парах)</text>
+<text x="650" y="1870" text-anchor="middle" font-size="21" font-weight="700" fill="#1e2420">0.5358</text>
+
+<line x1="810" y1="1820" x2="890" y2="1820" stroke="#a54a2e" stroke-width="1.4"/>
+
+<line x1="890" y1="1720" x2="890" y2="1920" stroke="#a54a2e" stroke-width="1.2"/>
+
+<g stroke="#a54a2e"><line x1="890" y1="1765" x2="920" y2="1765" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="920" y="1720" width="240" height="90" rx="6" fill="#f3e6e0" stroke="#a54a2e"/>
+<text x="1040" y="1745" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">tr3</text>
+<text x="1040" y="1762" text-anchor="middle" font-size="10.5" fill="#5c6960">транзитивных 400K → 1.2M</text>
+<text x="1040" y="1796" text-anchor="middle" font-size="17" font-weight="700" fill="#a54a2e">0.5350</text>
+
+<g stroke="#a54a2e"><line x1="890" y1="1875" x2="920" y2="1875" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="920" y="1830" width="240" height="90" rx="6" fill="#f3e6e0" stroke="#a54a2e"/>
+<text x="1040" y="1855" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">st1</text>
+<text x="1040" y="1872" text-anchor="middle" font-size="10.5" fill="#5c6960">пул стратифицирован по 20 категориям</text>
+<text x="1040" y="1906" text-anchor="middle" font-size="17" font-weight="700" fill="#a54a2e">0.5279</text>
+
+<line x1="650" y1="1890" x2="650" y2="2230" stroke="#0e6e55" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="666" y="2060" fill="#0e6e55" font-size="11" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">+swap-TTA</text>
+
+<rect x="490" y="2230" width="320" height="130" rx="8" fill="#ffffff" stroke="#1e2420" stroke-width="1.4"/>
+<text x="650" y="2258" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#1e2420">v29 · trans_tta</text>
+<text x="650" y="2278" text-anchor="middle" font-size="11" fill="#5c6960">ce_bge_trans_clean +</text>
+<text x="650" y="2294" text-anchor="middle" font-size="11" fill="#5c6960">среднее прогонов (A,B) и (B,A)</text>
+<text x="650" y="2340" text-anchor="middle" font-size="21" font-weight="700" fill="#1e2420">0.53738</text>
+
+<line x1="490" y1="2295" x2="420" y2="2295" stroke="#5c6960" stroke-width="1.4"/>
+
+<line x1="420" y1="2195" x2="420" y2="2395" stroke="#5c6960" stroke-width="1.2"/>
+
+<g stroke="#5c6960"><line x1="420" y1="2240" x2="390" y2="2240" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="150" y="2195" width="240" height="90" rx="6" fill="#eaede6" stroke="#d3d9ce"/>
+<text x="270" y="2220" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">ens_tt · v30</text>
+<text x="270" y="2237" text-anchor="middle" font-size="10.5" fill="#5c6960">trans_clean + tr3, без TTA</text>
+<text x="270" y="2271" text-anchor="middle" font-size="17" font-weight="700" fill="#1e2420">0.53706</text>
+
+<g stroke="#5c6960"><line x1="420" y1="2350" x2="390" y2="2350" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="150" y="2305" width="240" height="90" rx="6" fill="#eaede6" stroke="#d3d9ce"/>
+<text x="270" y="2330" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">s1v2 · v36</text>
+<text x="270" y="2347" text-anchor="middle" font-size="10.5" fill="#5c6960">ансамбль, без TTA</text>
+<text x="270" y="2381" text-anchor="middle" font-size="17" font-weight="700" fill="#1e2420">0.53721</text>
+
+<text x="150" y="2411" fill="#5c6960" font-size="10" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">меряют вклад ансамбля отдельно от TTA —</text>
+
+<text x="150" y="2425" fill="#5c6960" font-size="10" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">воспроизводимо +0.0013</text>
+
+<line x1="810" y1="2295" x2="890" y2="2295" stroke="#a54a2e" stroke-width="1.4"/>
+
+<line x1="890" y1="2085" x2="890" y2="2505" stroke="#a54a2e" stroke-width="1.2"/>
+
+<g stroke="#a54a2e"><line x1="890" y1="2130" x2="920" y2="2130" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="920" y="2085" width="240" height="90" rx="6" fill="#f3e6e0" stroke="#a54a2e"/>
+<text x="1040" y="2110" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">dual · v37</text>
+<text x="1040" y="2127" text-anchor="middle" font-size="10.5" fill="#5c6960">двухголовая модель, вторая</text>
+<text x="1040" y="2140" text-anchor="middle" font-size="10.5" fill="#5c6960">голова на человеческой разметке</text>
+<text x="1040" y="2161" text-anchor="middle" font-size="17" font-weight="700" fill="#a54a2e">0.53375</text>
+
+<g stroke="#a54a2e"><line x1="890" y1="2240" x2="920" y2="2240" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="920" y="2195" width="240" height="90" rx="6" fill="#f3e6e0" stroke="#a54a2e"/>
+<text x="1040" y="2220" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">tcgb · v39</text>
+<text x="1040" y="2237" text-anchor="middle" font-size="10.5" fill="#5c6960">+ gbdt_v1.1 10%, вход cap 350</text>
+<text x="1040" y="2271" text-anchor="middle" font-size="17" font-weight="700" fill="#a54a2e">0.5279</text>
+
+<g stroke="#a54a2e"><line x1="890" y1="2350" x2="920" y2="2350" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="920" y="2305" width="240" height="90" rx="6" fill="#f3e6e0" stroke="#a54a2e"/>
+<text x="1040" y="2330" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">v35 · pf-блend</text>
+<text x="1040" y="2347" text-anchor="middle" font-size="10.5" fill="#5c6960">trans_clean + BGE-retrieval,</text>
+<text x="1040" y="2360" text-anchor="middle" font-size="10.5" fill="#5c6960">без TTA</text>
+<text x="1040" y="2381" text-anchor="middle" font-size="17" font-weight="700" fill="#a54a2e">0.5313</text>
+
+<g stroke="#a54a2e"><line x1="890" y1="2460" x2="920" y2="2460" stroke-width="1.2" marker-end="url(#arrow)"/></g>
+
+<rect x="920" y="2415" width="240" height="90" rx="6" fill="#f3e6e0" stroke="#a54a2e" stroke-dasharray="4,3"/>
+<text x="1040" y="2440" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1e2420">v34 · tr4+pf</text>
+<text x="1040" y="2457" text-anchor="middle" font-size="10.5" fill="#5c6960">ансамбль + TTA, 4 прохода</text>
+<text x="1040" y="2491" text-anchor="middle" font-size="14" font-weight="700" fill="#a54a2e">таймаут контейнера</text>
+
+<text x="920" y="2535" fill="#a54a2e" font-size="10" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">каждая ветка — либо сдвиг к «человеческой» конвенции</text>
+
+<text x="920" y="2549" fill="#a54a2e" font-size="10" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">разметки, либо превышение бюджета 780 с</text>
+
+<line x1="650" y1="2360" x2="650" y2="2690" stroke="#0e6e55" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="666" y="2525" fill="#0e6e55" font-size="11" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">атрибуты 350→500</text>
+
+<circle cx="650" cy="2565" r="5" fill="#96731c"/>
+
+<rect x="480" y="2690" width="340" height="150" rx="8" fill="#f4ecd8" stroke="#c79a2e" stroke-width="2"/>
+<text x="650" y="2723" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#96731c">v41 · c500 — ФИНАЛ 1</text>
+<text x="650" y="2745" text-anchor="middle" font-size="11.5" fill="#1e2420">ce_bge_trans_clean + TTA,</text>
+<text x="650" y="2762" text-anchor="middle" font-size="11.5" fill="#1e2420">cap 500, GBDT выключен (WG=0)</text>
+<text x="650" y="2822" text-anchor="middle" font-size="24" font-weight="700" fill="#96731c">0.538866</text>
+
+<path d="M 650 2565 L 1040 2565 L 1040 3245 L 820 3245" fill="none" stroke="#c79a2e" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+
+<text x="1056" y="2897" fill="#96731c" font-size="10.5" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">чекпойнт дообучен</text>
+
+<text x="1056" y="2911" fill="#96731c" font-size="10.5" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace">дальше, тот же рецепт</text>
+
+<rect x="480" y="3170" width="340" height="150" rx="8" fill="#f4ecd8" stroke="#c79a2e" stroke-width="1.6"/>
+<text x="650" y="3203" text-anchor="middle" font-family="IBM Plex Sans Condensed, Arial, sans-serif" font-weight="700" font-size="15" fill="#96731c">v43 · cont500 — ФИНАЛ 2</text>
+<text x="650" y="3225" text-anchor="middle" font-size="11.5" fill="#1e2420">ce_bge_trans_clean, чекпойнт</text>
+<text x="650" y="3242" text-anchor="middle" font-size="11.5" fill="#1e2420">дообучен ещё раз, + TTA, cap 500</text>
+<text x="650" y="3302" text-anchor="middle" font-size="24" font-weight="700" fill="#96731c">0.538491</text>
+
+          </svg>
